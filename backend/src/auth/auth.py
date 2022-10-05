@@ -5,9 +5,9 @@ from jose import jwt
 from urllib.request import urlopen
 
 
-AUTH0_DOMAIN = 'udacity-fsnd.auth0.com'
+AUTH0_DOMAIN = 'dev-8mobj0oc.us.auth0.com'
 ALGORITHMS = ['RS256']
-API_AUDIENCE = 'dev'
+API_AUDIENCE = 'csauth'
 
 ## AuthError Exception
 '''
@@ -56,8 +56,8 @@ def get_token_auth_header():
 '''
 def check_permissions(permission, payload):
     if "permissions" in payload:
-    if permission in payload['permissions']:
-        return True
+        if permission in payload['permissions']:
+            return True
     raise AuthError({
         'success': False,
         'message': 'Permission not found in JWT',

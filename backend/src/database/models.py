@@ -15,20 +15,20 @@ setup_db(app)
 '''
 
 
-def setup_db(app):
-    app.config["SQLALCHEMY_DATABASE_URI"] = database_path
-    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-    db.app = app
-    db.init_app(app)
+def setup_db(myapp):
+    myapp.config["SQLALCHEMY_DATABASE_URI"] = database_path
+    myapp.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+    db.app = myapp
+    db.init_app(myapp)
 
 
 '''
 db_drop_and_create_all()
     drops the database tables and starts fresh
     can be used to initialize a clean database
-    !!NOTE you can change the database_filename variable to have multiple verisons of a database
+    !!NOTE you can change the database_filename
+    variable to have multiple verisons of a database
 '''
-
 
 def db_drop_and_create_all():
     db.drop_all()
